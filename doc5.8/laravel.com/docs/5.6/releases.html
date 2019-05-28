@@ -1,0 +1,811 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from laravel.com/docs/5.6/releases by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 May 2019 04:23:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <title>Release Notes - Laravel - The PHP Framework For Web Artisans</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Taylor Otwell">
+    <meta name="description" content="Laravel - The PHP framework for web artisans.">
+    <meta name="keywords" content="laravel, php, framework, web, artisans, taylor otwell">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="canonical" href="../5.8/releases.html" />
+        <link href='https://fonts.googleapis.com/css?family=Miriam+Libre:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/css/laraveldf84.css?id=561f882931bf31d146e8">
+    <link rel="stylesheet" href="../../../cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+    <link rel="stylesheet" type="text/css" href="../../fonts/632887/FFE2ABC2B78114E8E.css" />
+    <link rel="apple-touch-icon" href="../../favicon.png">
+</head>
+<body class="docs language-php">
+    <div class="laracon-banner">
+        <!-- <img src="/assets/svg/laracon-logo.svg" alt=""> -->
+
+        Laracon EU tickets are now available!
+        <a href="https://laracon.eu/">Get your tickets today!</a>
+
+<!--         Laracon US 2019 tickets are now available!
+        <a href="https://www.eventbrite.com/e/laracon-us-2019-tickets-51733090065">Get your tickets today!</a> -->
+    </div>
+    <span class="overlay"></span>
+
+    <nav class="main">
+        <a href="https://laravel.com/" class="brand nav-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="84.1" height="57.6" viewBox="0 0 84.1 57.6"><path fill="#FB503B" d="M83.8 26.9c-.6-.6-8.3-10.3-9.6-11.9-1.4-1.6-2-1.3-2.9-1.2s-10.6 1.8-11.7 1.9c-1.1.2-1.8.6-1.1 1.6.6.9 7 9.9 8.4 12l-25.5 6.1L21.2 1.5c-.8-1.2-1-1.6-2.8-1.5C16.6.1 2.5 1.3 1.5 1.3c-1 .1-2.1.5-1.1 2.9S17.4 41 17.8 42c.4 1 1.6 2.6 4.3 2 2.8-.7 12.4-3.2 17.7-4.6 2.8 5 8.4 15.2 9.5 16.7 1.4 2 2.4 1.6 4.5 1 1.7-.5 26.2-9.3 27.3-9.8 1.1-.5 1.8-.8 1-1.9-.6-.8-7-9.5-10.4-14 2.3-.6 10.6-2.8 11.5-3.1 1-.3 1.2-.8.6-1.4zm-46.3 9.5c-.3.1-14.6 3.5-15.3 3.7-.8.2-.8.1-.8-.2-.2-.3-17-35.1-17.3-35.5-.2-.4-.2-.8 0-.8S17.6 2.4 18 2.4c.5 0 .4.1.6.4 0 0 18.7 32.3 19 32.8.4.5.2.7-.1.8zm40.2 7.5c.2.4.5.6-.3.8-.7.3-24.1 8.2-24.6 8.4-.5.2-.8.3-1.4-.6s-8.2-14-8.2-14L68.1 32c.6-.2.8-.3 1.2.3.4.7 8.2 11.3 8.4 11.6zm1.6-17.6c-.6.1-9.7 2.4-9.7 2.4l-7.5-10.2c-.2-.3-.4-.6.1-.7.5-.1 9-1.6 9.4-1.7.4-.1.7-.2 1.2.5.5.6 6.9 8.8 7.2 9.1.3.3-.1.5-.7.6z"/></svg>
+            <span>Laravel</span>
+        </a>
+
+        <div class="search nav-block invisible">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#A1A1A1" d="M5.8 11.7c-1.6 0-3-.6-4.1-1.7S0 7.4 0 5.8s.6-3 1.7-4.1C2.8.6 4.3 0 5.8 0s3 .6 4.1 1.7c2.3 2.3 2.3 6 0 8.3-1 1.1-2.5 1.7-4.1 1.7zM5.8 1c-1.3 0-2.5.5-3.4 1.4C1.5 3.3 1 4.5 1 5.8s.5 2.5 1.4 3.4c.9.9 2.1 1.4 3.4 1.4s2.5-.5 3.4-1.4c1.9-1.9 1.9-5 0-6.9C8.4 1.5 7.1 1 5.8 1z"/><path fill="#A1A1A1" d="M15.5 16c-.1 0-.3 0-.3-.1L9.3 10c-.2-.2-.2-.5 0-.7s.5-.2.7 0l5.9 5.9c.2.2.2.5 0 .7-.1.1-.3.1-.4.1z"/></svg>
+            <input placeholder="search" type="text" id="search-input" aria-label="search"/>
+        </div>
+
+        <ul class="main-nav">
+            <li class="nav-docs"><a href="https://laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel-news"><a href="https://laravel-news.com/">News</a></li>
+<li class="nav-partners"><a href="https://laravel.com/partners">Partners</a></li>
+<li class="nav-forge"><a href="https://forge.laravel.com/">Forge</a></li>
+
+<li class="dropdown community-dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecosystem <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+
+		<li><a href="https://envoyer.io/">Envoyer</a></li>
+		<li><a href="https://horizon.laravel.com/">Horizon</a></li>
+		<li><a href="https://lumen.laravel.com/">Lumen</a></li>
+		<li><a href="https://nova.laravel.com/">Nova</a></li>
+		<li><a href="https://spark.laravel.com/">Spark</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracon.com.au/">Laracon AU</a></li>
+		<li><a href="https://laracon.eu/">Laracon EU</a></li>
+		<li><a href="http://laracon.us/">Laracon US</a></li>
+		<li><a href="https://laracon.net/">Laracon Online</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://blog.laravel.com/">Blog</a></li>
+		<li><a href="https://laravel.com/certification">Certification</a></li>
+		<li><a href="https://laracasts.com/discuss">Forums</a></li>
+		<li><a href="https://github.com/laravel/laravel">GitHub</a></li>
+		<li><a href="https://larajobs.com/?partner=5#/">Jobs</a></li>
+		<li><a href="http://www.laravelpodcast.com/">Podcast</a></li>
+		<li><a href="https://larachat.co/">Slack</a></li>
+		<li><a href="https://twitter.com/laravelphp">Twitter</a></li>
+	</ul>
+</li>
+        </ul>
+
+                    <div class="switcher">
+	<div class="dropdown">
+		<button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+			5.6
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../master/releases.html">Master</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.8/releases.html">5.8</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.7/releases.html">5.7</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="releases.html">5.6</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.5/releases.html">5.5</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.4/releases.html">5.4</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.3/releases.html">5.3</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.2/releases.html">5.2</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.1/releases.html">5.1</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.0/releases.html">5.0</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../4.2/releases.html">4.2</a>
+				</li>
+					</ul>
+	</div>
+</div>
+        
+        <div class="responsive-sidebar-nav">
+            <a href="#" class="toggle-slide menu-link btn">&#9776;</a>
+        </div>
+    </nav>
+
+    <nav id="slide-menu" class="slide-menu" role="navigation">
+
+	<div class="brand">
+		<a href="https://laravel.com/">
+			<img src="../../assets/img/laravel-logo-white.png" height="50">
+		</a>
+	</div>
+
+	<ul class="slide-main-nav">
+		<li><a href="https://laravel.com/">Home</a></li>
+		<li class="nav-docs"><a href="https://laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel-news"><a href="https://laravel-news.com/">News</a></li>
+<li class="nav-partners"><a href="https://laravel.com/partners">Partners</a></li>
+<li class="nav-forge"><a href="https://forge.laravel.com/">Forge</a></li>
+
+<li class="dropdown community-dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecosystem <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+
+		<li><a href="https://envoyer.io/">Envoyer</a></li>
+		<li><a href="https://horizon.laravel.com/">Horizon</a></li>
+		<li><a href="https://lumen.laravel.com/">Lumen</a></li>
+		<li><a href="https://nova.laravel.com/">Nova</a></li>
+		<li><a href="https://spark.laravel.com/">Spark</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracon.com.au/">Laracon AU</a></li>
+		<li><a href="https://laracon.eu/">Laracon EU</a></li>
+		<li><a href="http://laracon.us/">Laracon US</a></li>
+		<li><a href="https://laracon.net/">Laracon Online</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://blog.laravel.com/">Blog</a></li>
+		<li><a href="https://laravel.com/certification">Certification</a></li>
+		<li><a href="https://laracasts.com/discuss">Forums</a></li>
+		<li><a href="https://github.com/laravel/laravel">GitHub</a></li>
+		<li><a href="https://larajobs.com/?partner=5#/">Jobs</a></li>
+		<li><a href="http://www.laravelpodcast.com/">Podcast</a></li>
+		<li><a href="https://larachat.co/">Slack</a></li>
+		<li><a href="https://twitter.com/laravelphp">Twitter</a></li>
+	</ul>
+</li>
+	</ul>
+
+	<div class="slide-docs-nav">
+		<h2>Documentation</h2>
+
+		<ul class="slide-docs-version">
+			<li>
+				<h2>Version</h2>
+
+				<ul>
+					<li>
+													<div class="switcher">
+	<div class="dropdown">
+		<button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+			5.6
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../master/releases.html">Master</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.8/releases.html">5.8</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.7/releases.html">5.7</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="releases.html">5.6</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.5/releases.html">5.5</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.4/releases.html">5.4</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.3/releases.html">5.3</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.2/releases.html">5.2</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.1/releases.html">5.1</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../5.0/releases.html">5.0</a>
+				</li>
+							<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="../4.2/releases.html">4.2</a>
+				</li>
+					</ul>
+	</div>
+</div>
+											</li>
+				</ul>
+			</li>
+		</ul>
+
+		<ul>
+<li>
+<h2>Prologue</h2>
+<ul>
+<li><a href="releases.html">Release Notes</a></li>
+<li><a href="upgrade.html">Upgrade Guide</a></li>
+<li><a href="contributions.html">Contribution Guide</a></li>
+<li><a href="https://laravel.com/api/5.6">API Documentation</a></li>
+</ul>
+</li>
+<li>
+<h2>Getting Started</h2>
+<ul>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="structure.html">Directory Structure</a></li>
+<li><a href="homestead.html">Homestead</a></li>
+<li><a href="valet.html">Valet</a></li>
+<li><a href="deployment.html">Deployment</a></li>
+</ul>
+</li>
+<li>
+<h2>Architecture Concepts</h2>
+<ul>
+<li><a href="lifecycle.html">Request Lifecycle</a></li>
+<li><a href="container.html">Service Container</a></li>
+<li><a href="providers.html">Service Providers</a></li>
+<li><a href="facades.html">Facades</a></li>
+<li><a href="contracts.html">Contracts</a></li>
+</ul>
+</li>
+<li>
+<h2>The Basics</h2>
+<ul>
+<li><a href="routing.html">Routing</a></li>
+<li><a href="middleware.html">Middleware</a></li>
+<li><a href="csrf.html">CSRF Protection</a></li>
+<li><a href="controllers.html">Controllers</a></li>
+<li><a href="requests.html">Requests</a></li>
+<li><a href="responses.html">Responses</a></li>
+<li><a href="views.html">Views</a></li>
+<li><a href="urls.html">URL Generation</a></li>
+<li><a href="session.html">Session</a></li>
+<li><a href="validation.html">Validation</a></li>
+<li><a href="errors.html">Error Handling</a></li>
+<li><a href="logging.html">Logging</a></li>
+</ul>
+</li>
+<li>
+<h2>Frontend</h2>
+<ul>
+<li><a href="blade.html">Blade Templates</a></li>
+<li><a href="localization.html">Localization</a></li>
+<li><a href="frontend.html">Frontend Scaffolding</a></li>
+<li><a href="mix.html">Compiling Assets</a></li>
+</ul>
+</li>
+<li>
+<h2>Security</h2>
+<ul>
+<li><a href="authentication.html">Authentication</a></li>
+<li><a href="passport.html">API Authentication</a></li>
+<li><a href="authorization.html">Authorization</a></li>
+<li><a href="encryption.html">Encryption</a></li>
+<li><a href="hashing.html">Hashing</a></li>
+<li><a href="passwords.html">Password Reset</a></li>
+</ul>
+</li>
+<li>
+<h2>Digging Deeper</h2>
+<ul>
+<li><a href="artisan.html">Artisan Console</a></li>
+<li><a href="broadcasting.html">Broadcasting</a></li>
+<li><a href="cache.html">Cache</a></li>
+<li><a href="collections.html">Collections</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="filesystem.html">File Storage</a></li>
+<li><a href="helpers.html">Helpers</a></li>
+<li><a href="mail.html">Mail</a></li>
+<li><a href="notifications.html">Notifications</a></li>
+<li><a href="packages.html">Package Development</a></li>
+<li><a href="queues.html">Queues</a></li>
+<li><a href="scheduling.html">Task Scheduling</a></li>
+</ul>
+</li>
+<li>
+<h2>Database</h2>
+<ul>
+<li><a href="database.html">Getting Started</a></li>
+<li><a href="queries.html">Query Builder</a></li>
+<li><a href="pagination.html">Pagination</a></li>
+<li><a href="migrations.html">Migrations</a></li>
+<li><a href="seeding.html">Seeding</a></li>
+<li><a href="redis.html">Redis</a></li>
+</ul>
+</li>
+<li>
+<h2>Eloquent ORM</h2>
+<ul>
+<li><a href="eloquent.html">Getting Started</a></li>
+<li><a href="eloquent-relationships.html">Relationships</a></li>
+<li><a href="eloquent-collections.html">Collections</a></li>
+<li><a href="eloquent-mutators.html">Mutators</a></li>
+<li><a href="eloquent-resources.html">API Resources</a></li>
+<li><a href="eloquent-serialization.html">Serialization</a></li>
+</ul>
+</li>
+<li>
+<h2>Testing</h2>
+<ul>
+<li><a href="testing.html">Getting Started</a></li>
+<li><a href="http-tests.html">HTTP Tests</a></li>
+<li><a href="dusk.html">Browser Tests</a></li>
+<li><a href="database-testing.html">Database</a></li>
+<li><a href="mocking.html">Mocking</a></li>
+</ul>
+</li>
+<li>
+<h2>Official Packages</h2>
+<ul>
+<li><a href="billing.html">Cashier</a></li>
+<li><a href="envoy.html">Envoy</a></li>
+<li><a href="horizon.html">Horizon</a></li>
+<li><a href="passport.html">Passport</a></li>
+<li><a href="scout.html">Scout</a></li>
+<li><a href="socialite.html">Socialite</a></li>
+</ul>
+</li>
+</ul>
+	</div>
+
+</nav>
+
+<div class="docs-wrapper container">
+
+	<section class="sidebar">
+		<script async type="text/javascript" src="../../../cdn.carbonads.com/carbon83bb.js?serve=CKYILK3E&amp;placement=laravelcom" id="_carbonads_js"></script>
+		<small><a href="#" id="doc-expand" style="font-size: 11px; color: #B8B8B8;">Expand All</a></small>
+		<ul>
+<li>
+<h2>Prologue</h2>
+<ul>
+<li><a href="releases.html">Release Notes</a></li>
+<li><a href="upgrade.html">Upgrade Guide</a></li>
+<li><a href="contributions.html">Contribution Guide</a></li>
+<li><a href="https://laravel.com/api/5.6">API Documentation</a></li>
+</ul>
+</li>
+<li>
+<h2>Getting Started</h2>
+<ul>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="structure.html">Directory Structure</a></li>
+<li><a href="homestead.html">Homestead</a></li>
+<li><a href="valet.html">Valet</a></li>
+<li><a href="deployment.html">Deployment</a></li>
+</ul>
+</li>
+<li>
+<h2>Architecture Concepts</h2>
+<ul>
+<li><a href="lifecycle.html">Request Lifecycle</a></li>
+<li><a href="container.html">Service Container</a></li>
+<li><a href="providers.html">Service Providers</a></li>
+<li><a href="facades.html">Facades</a></li>
+<li><a href="contracts.html">Contracts</a></li>
+</ul>
+</li>
+<li>
+<h2>The Basics</h2>
+<ul>
+<li><a href="routing.html">Routing</a></li>
+<li><a href="middleware.html">Middleware</a></li>
+<li><a href="csrf.html">CSRF Protection</a></li>
+<li><a href="controllers.html">Controllers</a></li>
+<li><a href="requests.html">Requests</a></li>
+<li><a href="responses.html">Responses</a></li>
+<li><a href="views.html">Views</a></li>
+<li><a href="urls.html">URL Generation</a></li>
+<li><a href="session.html">Session</a></li>
+<li><a href="validation.html">Validation</a></li>
+<li><a href="errors.html">Error Handling</a></li>
+<li><a href="logging.html">Logging</a></li>
+</ul>
+</li>
+<li>
+<h2>Frontend</h2>
+<ul>
+<li><a href="blade.html">Blade Templates</a></li>
+<li><a href="localization.html">Localization</a></li>
+<li><a href="frontend.html">Frontend Scaffolding</a></li>
+<li><a href="mix.html">Compiling Assets</a></li>
+</ul>
+</li>
+<li>
+<h2>Security</h2>
+<ul>
+<li><a href="authentication.html">Authentication</a></li>
+<li><a href="passport.html">API Authentication</a></li>
+<li><a href="authorization.html">Authorization</a></li>
+<li><a href="encryption.html">Encryption</a></li>
+<li><a href="hashing.html">Hashing</a></li>
+<li><a href="passwords.html">Password Reset</a></li>
+</ul>
+</li>
+<li>
+<h2>Digging Deeper</h2>
+<ul>
+<li><a href="artisan.html">Artisan Console</a></li>
+<li><a href="broadcasting.html">Broadcasting</a></li>
+<li><a href="cache.html">Cache</a></li>
+<li><a href="collections.html">Collections</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="filesystem.html">File Storage</a></li>
+<li><a href="helpers.html">Helpers</a></li>
+<li><a href="mail.html">Mail</a></li>
+<li><a href="notifications.html">Notifications</a></li>
+<li><a href="packages.html">Package Development</a></li>
+<li><a href="queues.html">Queues</a></li>
+<li><a href="scheduling.html">Task Scheduling</a></li>
+</ul>
+</li>
+<li>
+<h2>Database</h2>
+<ul>
+<li><a href="database.html">Getting Started</a></li>
+<li><a href="queries.html">Query Builder</a></li>
+<li><a href="pagination.html">Pagination</a></li>
+<li><a href="migrations.html">Migrations</a></li>
+<li><a href="seeding.html">Seeding</a></li>
+<li><a href="redis.html">Redis</a></li>
+</ul>
+</li>
+<li>
+<h2>Eloquent ORM</h2>
+<ul>
+<li><a href="eloquent.html">Getting Started</a></li>
+<li><a href="eloquent-relationships.html">Relationships</a></li>
+<li><a href="eloquent-collections.html">Collections</a></li>
+<li><a href="eloquent-mutators.html">Mutators</a></li>
+<li><a href="eloquent-resources.html">API Resources</a></li>
+<li><a href="eloquent-serialization.html">Serialization</a></li>
+</ul>
+</li>
+<li>
+<h2>Testing</h2>
+<ul>
+<li><a href="testing.html">Getting Started</a></li>
+<li><a href="http-tests.html">HTTP Tests</a></li>
+<li><a href="dusk.html">Browser Tests</a></li>
+<li><a href="database-testing.html">Database</a></li>
+<li><a href="mocking.html">Mocking</a></li>
+</ul>
+</li>
+<li>
+<h2>Official Packages</h2>
+<ul>
+<li><a href="billing.html">Cashier</a></li>
+<li><a href="envoy.html">Envoy</a></li>
+<li><a href="horizon.html">Horizon</a></li>
+<li><a href="passport.html">Passport</a></li>
+<li><a href="scout.html">Scout</a></li>
+<li><a href="socialite.html">Socialite</a></li>
+</ul>
+</li>
+</ul>
+	</section>
+
+	
+
+	<article>
+		<h1>Release Notes</h1>
+<ul>
+<li><a href="#versioning-scheme">Versioning Scheme</a></li>
+<li><a href="#support-policy">Support Policy</a></li>
+<li><a href="#laravel-5.6">Laravel 5.6</a></li>
+</ul>
+<p><a name="versioning-scheme"></a></p>
+<h2>Versioning Scheme</h2>
+<p>Laravel's versioning scheme maintains the following convention: <code>paradigm.major.minor</code>. Major framework releases are released every six months (February and August), while minor releases may be released as often as every week. Minor releases should <strong>never</strong> contain breaking changes.</p>
+<p>When referencing the Laravel framework or its components from your application or package, you should always use a version constraint such as <code>5.5.*</code>, since major releases of Laravel do include breaking changes. However, we strive to always ensure you may update to a new major release in one day or less.</p>
+<p>Paradigm shifting releases are separated by many years and represent fundamental shifts in the framework's architecture and conventions. Currently, there is no paradigm shifting release under development.</p>
+<p><a name="support-policy"></a></p>
+<h2>Support Policy</h2>
+<p>For LTS releases, such as Laravel 5.5, bug fixes are provided for 2 years and security fixes are provided for 3 years. These releases provide the longest window of support and maintenance. For general releases, bug fixes are provided for 6 months and security fixes are provided for 1 year.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Release</th>
+<th>Bug Fixes Until</th>
+<th>Security Fixes Until</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.0</td>
+<td>February 4th, 2015</td>
+<td>August 4th, 2015</td>
+<td>February 4th, 2016</td>
+</tr>
+<tr>
+<td>5.1 (LTS)</td>
+<td>June 9th, 2015</td>
+<td>June 9th, 2017</td>
+<td>June 9th, 2018</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>December 21st, 2015</td>
+<td>June 21st, 2016</td>
+<td>December 21st, 2016</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>August 23rd, 2016</td>
+<td>February 23rd, 2017</td>
+<td>August 23rd, 2017</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>January 24th, 2017</td>
+<td>July 24th, 2017</td>
+<td>January 24th, 2018</td>
+</tr>
+<tr>
+<td>5.5 (LTS)</td>
+<td>August 30th, 2017</td>
+<td>August 30th, 2019</td>
+<td>August 30th, 2020</td>
+</tr>
+<tr>
+<td>5.6</td>
+<td>February 7th, 2018</td>
+<td>August 7th, 2018</td>
+<td>February 7th, 2019</td>
+</tr>
+</tbody>
+</table>
+<p><a name="laravel-5.6"></a></p>
+<h2>Laravel 5.6</h2>
+<p>Laravel 5.6 continues the improvements made in Laravel 5.5 by adding an improved logging system, single-server task scheduling, improvements to model serialization, dynamic rate limiting, broadcast channel classes, API resource controller generation, Eloquent date formatting improvements, Blade component aliases, Argon2 password hashing support, inclusion of the Collision package, and more. In addition, all front-end scaffolding has been upgraded to Bootstrap 4.</p>
+<p>All underlying Symfony components used by Laravel have been upgraded to the Symfony <code>~4.0</code> release series.</p>
+<p>The release of Laravel 5.6 coincides with the release of <a href="https://spark.laravel.com/">Spark 6.0</a>, the first major upgrade to Laravel Spark since its release. Spark 6.0 introduces per-seat pricing for Stripe and Braintree, localization, Bootstrap 4, an enhanced UI, and Stripe Elements support.</p>
+<blockquote>
+<p>{tip} This documentation summarizes the most notable improvements to the framework; however, more thorough change logs are always available <a href="https://github.com/laravel/framework/blob/5.6/CHANGELOG-5.6.md">on GitHub</a>.</p>
+</blockquote>
+<h3>Logging Improvements</h3>
+<p>Laravel 5.6 brings vast improvements to Laravel's logging system. All logging configuration is housed in the new <code>config/logging.php</code> configuration file. You may now easily build logging &quot;stacks&quot; that send log messages to multiple handlers. For example, you may send all <code>debug</code> level messages to the system log while sending <code>error</code> level messages to Slack so that your team can quickly react to errors:</p>
+<pre><code>'channels' =&gt; [
+    'stack' =&gt; [
+        'driver' =&gt; 'stack',
+        'channels' =&gt; ['syslog', 'slack'],
+    ],
+],</code></pre>
+<p>In addition, it is now easier to customize existing log channels using the logging system's new &quot;tap&quot; functionality. For more information, check out the <a href="logging.html">full documentation on logging</a>.</p>
+<h3>Single Server Task Scheduling</h3>
+<blockquote>
+<p>{note} To utilize this feature, your application must be using the <code>memcached</code> or <code>redis</code> cache driver as your application's default cache driver. In addition, all servers must be communicating with the same central cache server.</p>
+</blockquote>
+<p>If your application is running on multiple servers, you may now limit a scheduled job to only execute on a single server. For instance, assume you have a scheduled task that generates a new report every Friday night. If the task scheduler is running on three worker servers, the scheduled task will run on all three servers and generate the report three times. Not good!</p>
+<p>To indicate that the task should run on only one server, you may use the <code>onOneServer</code> method when defining the scheduled task. The first server to obtain the task will secure an atomic lock on the job to prevent other servers from running the same task on the same Cron cycle:</p>
+<pre><code>$schedule-&gt;command('report:generate')
+         -&gt;fridays()
+         -&gt;at('17:00')
+         -&gt;onOneServer();</code></pre>
+<h3>Dynamic Rate Limiting</h3>
+<p>When specifying a <a href="routing.html#rate-limiting">rate limit</a> on a group of routes in previous releases of Laravel, you were forced to provide a hard-coded number of maximum requests:</p>
+<pre><code>Route::middleware('auth:api', 'throttle:60,1')-&gt;group(function () {
+    Route::get('/user', function () {
+        //
+    });
+});</code></pre>
+<p>In Laravel 5.6, you may specify a dynamic request maximum based on an attribute of the authenticated <code>User</code> model. For example, if your <code>User</code> model contains a <code>rate_limit</code> attribute, you may pass the name of the attribute to the <code>throttle</code> middleware so that it is used to calculate the maximum request count:</p>
+<pre><code>Route::middleware('auth:api', 'throttle:rate_limit,1')-&gt;group(function () {
+    Route::get('/user', function () {
+        //
+    });
+});</code></pre>
+<h3>Broadcast Channel Classes</h3>
+<p>If your application is consuming many different channels, your <code>routes/channels.php</code> file could become bulky. So, instead of using Closures to authorize channels, you may now use channel classes. To generate a channel class, use the <code>make:channel</code> Artisan command. This command will place a new channel class in the <code>App/Broadcasting</code> directory.</p>
+<pre><code>php artisan make:channel OrderChannel</code></pre>
+<p>Next, register your channel in your <code>routes/channels.php</code> file:</p>
+<pre><code>use App\Broadcasting\OrderChannel;
+
+Broadcast::channel('order.{order}', OrderChannel::class);</code></pre>
+<p>Finally, you may place the authorization logic for your channel in the channel class' <code>join</code> method. This <code>join</code> method will house the same logic you would have typically placed in your channel authorization Closure. Of course, you may also take advantage of channel model binding:</p>
+<pre><code>&lt;?php
+
+namespace App\Broadcasting;
+
+use App\User;
+use App\Order;
+
+class OrderChannel
+{
+    /**
+     * Create a new channel instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Authenticate the user's access to the channel.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Order  $order
+     * @return array|bool
+     */
+    public function join(User $user, Order $order)
+    {
+        return $user-&gt;id === $order-&gt;user_id;
+    }
+}</code></pre>
+<h3>API Controller Generation</h3>
+<p>When declaring resource routes that will be consumed by APIs, you will commonly want to exclude routes that present HTML templates such as <code>create</code> and <code>edit</code>. To generate a resource controller that does not include these methods, you may now use the <code>--api</code> switch when executing the <code>make:controller</code> command:</p>
+<pre><code>php artisan make:controller API/PhotoController --api</code></pre>
+<h3>Model Serialization Improvements</h3>
+<p>In previous releases of Laravel, queued models would not be restored with their loaded relationships intact. In Laravel 5.6, relationships that were loaded on the model when it was queued are automatically re-loaded when the job is processed by the queue.</p>
+<h3>Eloquent Date Casting</h3>
+<p>You may now individually customize the format of Eloquent date cast columns. To get started, specify the desired date format within the cast declaration. Once specified, this format will be used when serializing the model to an array / JSON:</p>
+<pre><code>protected $casts = [
+    'birthday' =&gt; 'date:Y-m-d',
+    'joined_at' =&gt; 'datetime:Y-m-d H:00',
+];</code></pre>
+<h3>Blade Component Aliases</h3>
+<p>If your Blade components are stored in a sub-directory, you may now alias them for easier access. For example, imagine a Blade component that is stored at <code>resources/views/components/alert.blade.php</code>. You may use the <code>component</code> method to alias the component from <code>components.alert</code> to <code>alert</code>:</p>
+<pre><code>Blade::component('components.alert', 'alert');</code></pre>
+<p>Once the component has been aliased, you may render it using a directive:</p>
+<pre><code>@alert('alert', ['type' =&gt; 'danger'])
+    You are not allowed to access this resource!
+@endalert</code></pre>
+<p>You may omit the component parameters if it has no additional slots:</p>
+<pre><code>@alert
+    You are not allowed to access this resource!
+@endalert</code></pre>
+<h3>Argon2 Password Hashing</h3>
+<p>If you are building an application on PHP 7.2.0 or greater, Laravel now supports password hashing via the Argon2 algorithm. The default hash driver for your application is controlled by a new <code>config/hashing.php</code> configuration file.</p>
+<h3>UUID Methods</h3>
+<p>Laravel 5.6 introduces two new methods for generating UUIDs: <code>Str::uuid</code> and <code>Str::orderedUuid</code>. The <code>orderedUuid</code> method will generate a timestamp first UUID that is more easily and efficiently indexed by databases such as MySQL. Each of these methods returns a <code>Ramsey\Uuid\Uuid</code> object:</p>
+<pre><code>use Illuminate\Support\Str;
+
+return (string) Str::uuid();
+
+return (string) Str::orderedUuid();</code></pre>
+<h3>Collision</h3>
+<p>The default <code>laravel/laravel</code> application now contains a <code>dev</code> Composer dependency for the <a href="https://github.com/nunomaduro/collision">Collision</a> package maintained by Nuno Maduro. This packages provides beautiful error reporting when interacting with your Laravel application on the command line:</p>
+<img src="../../../raw.githubusercontent.com/nunomaduro/collision/stable/docs/example.png" width="600" height="388">
+<h3>Bootstrap 4</h3>
+<p>All front-end scaffolding such as the authentication boilerplate and example Vue component have been upgraded to <a href="https://blog.getbootstrap.com/2018/01/18/bootstrap-4/">Bootstrap 4</a>. By default, pagination link generation also now defaults to Bootstrap 4.</p>
+	</article>
+</div>
+
+    <footer class="main">
+        <ul>
+            <li class="nav-docs"><a href="https://laravel.com/docs">Documentation</a></li>
+<li class="nav-laracasts"><a href="https://laracasts.com/">Laracasts</a></li>
+<li class="nav-laravel-news"><a href="https://laravel-news.com/">News</a></li>
+<li class="nav-partners"><a href="https://laravel.com/partners">Partners</a></li>
+<li class="nav-forge"><a href="https://forge.laravel.com/">Forge</a></li>
+
+<li class="dropdown community-dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecosystem <span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+
+		<li><a href="https://envoyer.io/">Envoyer</a></li>
+		<li><a href="https://horizon.laravel.com/">Horizon</a></li>
+		<li><a href="https://lumen.laravel.com/">Lumen</a></li>
+		<li><a href="https://nova.laravel.com/">Nova</a></li>
+		<li><a href="https://spark.laravel.com/">Spark</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://laracon.com.au/">Laracon AU</a></li>
+		<li><a href="https://laracon.eu/">Laracon EU</a></li>
+		<li><a href="http://laracon.us/">Laracon US</a></li>
+		<li><a href="https://laracon.net/">Laracon Online</a></li>
+
+		<li class="divider"></li>
+
+		<li><a href="https://blog.laravel.com/">Blog</a></li>
+		<li><a href="https://laravel.com/certification">Certification</a></li>
+		<li><a href="https://laracasts.com/discuss">Forums</a></li>
+		<li><a href="https://github.com/laravel/laravel">GitHub</a></li>
+		<li><a href="https://larajobs.com/?partner=5#/">Jobs</a></li>
+		<li><a href="http://www.laravelpodcast.com/">Podcast</a></li>
+		<li><a href="https://larachat.co/">Slack</a></li>
+		<li><a href="https://twitter.com/laravelphp">Twitter</a></li>
+	</ul>
+</li>
+        </ul>
+        <p>Laravel is a trademark of Taylor Otwell. Copyright &copy; Taylor Otwell.</p>
+        <p class="less-significant">
+            <a href="http://jackmcdade.com/">
+                Designed by<br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="128.2" height="28" viewBox="0 0 128.2 28"><g fill="#c3c3c3"><path d="M14.2.4v1.4l-1.4-.3.3 4.5c.1 1.5 0 3-.1 4.5 0 .4-.1.8-.1 1.2-.1.4-.1.8-.3 1.2-.1.4-.3.7-.5 1.1-.2.3-.5.6-.9.9-.4.2-.9.4-1.5.6-.6.2-1.1.3-1.6.3-.6 0-1.2-.1-1.6-.3-.5-.2-.9-.6-1.1-1-.3-.5-.5-1-.6-1.6-.1-.6-.1-1.3 0-2.1 0-.2.1-.5.2-.7-.1-.2 0-.4.1-.6l.3-.6 1.1.4c.2 0 .5.1.8.2.3.1.5.1.6.2 0 .2 0 .4-.1.5-.1.2-.1.3-.2.4-.1.1-.2.3-.2.4-.1.2-.1.3-.1.5L6 10.8c-.1.3-.2.7-.2 1.1 0 .4.1.8.2 1.2.2.4.4.7.6 1 .3.3.6.4 1 .3.6 0 1.1-.3 1.4-.6.3-.4.5-.9.7-1.7.1-.7.2-1.6.2-2.8V5.4c0-.6-.1-1.3-.1-2-.1-.6-.2-1.3-.3-2H5.7c-.7 0-1.5 0-2.2.2-.3.1-.6.2-1 .4-.3.1-.6.4-.9.6-.2.3-.4.6-.5 1-.1.3-.1.7 0 1 .1.5.3.8.4.9v-.1c0-.4.1-.8.4-1 .3-.2.6-.3.9-.3.3 0 .6.1.9.3.3.2.4.6.4 1s-.1.8-.4 1c-.3.2-.6.3-1 .3-.8 0-1.4-.2-1.8-.7-.4-.4-.7-.9-.8-1.5C0 4 0 3.4.2 2.7c.2-.6.5-1.1 1-1.5.4-.3.8-.5 1.2-.7.4-.1.9-.2 1.4-.3.5-.1.9-.1 1.4-.1h2.9c.6 0 1.1 0 1.6.1.5 0 1 .1 1.5.1s1 .1 1.5.1c.4.1.9.1 1.5 0zM25.2 14.3c0 .2.1.4.1.6 0 .2.1.4.1.7-1-.1-2-.2-3-.1-1.1.1-2.1.2-3 .4 0-.2-.1-.4-.1-.5 0-.2-.1-.4-.1-.5.2 0 .5-.1.7-.1.2 0 .4-.1.6-.1-.1-1.5-.3-3.1-.5-4.6-.5.1-.9.1-1.4.2-.5.1-.9.1-1.4.2-.2.7-.3 1.3-.5 2s-.3 1.3-.5 2h.6c.1 0 .3 0 .4.1v.9c0 .1 0 .2-.1.3H14v-1.2h1c.2-.5.3-1 .4-1.5.1-.5.3-1 .4-1.5.2-.6.3-1.2.5-1.7.2-.6.3-1.2.5-1.7.2-1.1.4-2.1.6-3.2.2-1.1.3-2.1.4-3.2h-1.4c0-.2.1-.4.1-.6 0-.2 0-.4.1-.6h5.8l.2 1.2h-1c.3 2.1.7 4.3 1 6.5.3 2.2.7 4.4 1 6.5h1.6zM17.5 9c.4-.1.7-.1 1.1-.2.4-.1.8-.1 1.2-.2-.2-1-.3-2-.5-2.9-.2-1-.4-1.9-.6-2.9-.2 1-.4 2.1-.5 3.1-.3 1-.5 2.1-.7 3.1zM36.7 10.4h-.6c0 .6 0 1.2-.2 1.9-.2.6-.5 1.2-1 1.6-.5.5-1 .9-1.6 1.1-.6.3-1.3.4-2 .5-.6.1-1.1.1-1.8 0-.6-.1-1.1-.4-1.6-.7-.2-.2-.5-.4-.8-.7-.3-.3-.5-.5-.6-.8-.3-.5-.5-1-.6-1.5-.2-.5-.3-.9-.4-1.4-.1-.5-.2-1-.2-1.5s0-1 .1-1.6c.2-1 .4-2 .8-2.9.4-.9.8-1.7 1.4-2.3.5-.7 1.2-1.2 1.9-1.6.7-.3 1.4-.5 2.2-.5.3 0 .5 0 .8.1.3.1.5.2.7.4.3.3.7.7 1 1.2.3.5.6 1.2.7 1.9h.6v.6l-2.5.4c-.3.1-.5.1-.6 0-.1 0-.2-.1-.2-.2-.1-.1-.1-.2 0-.3h.4c.2-.2.3-.3.3-.6v-.7c0-.5-.2-.9-.5-1.3l-.4-.4c-.2-.1-.4-.1-.6 0-.2 0-.4.2-.6.4-.2.2-.4.5-.5.9-.3.2-.4.6-.5.9-.1.3-.2.5-.2.7-.6 2.6-.7 5.3-.2 8 .1.3.2.7.3 1s.3.6.5.9c.2.3.5.5.8.7.3.2.6.2 1 .1.6-.1 1-.4 1.4-1 .3-.5.6-1.1.7-1.8.1-.3.1-.6.1-.9v-.5c-.2 0-.4 0-.6-.1-.1-.1-.2-.2-.2-.3 0-.1 0-.2.1-.3h3.4c0 .1 0 .2-.1.3-.1.1-.1.2-.1.3z"/><path d="M48 14.2c.1.2.3.3.5.4.2.1.5.1.7 0 .1.1.1.2.1.4s-.1.3-.2.4c-.1.1-.2.2-.4.2h-1.4c-.3 0-.7 0-1-.1-.3-.1-.7-.2-1-.4-.3-.2-.5-.4-.7-.7-.2-.3-.3-.6-.3-1V9.9v-.4c0-.2-.1-.3-.2-.5s-.3-.3-.4-.4c-.2-.1-.4-.1-.7-.1-.1 0-.2 0-.5.1-.2.3-.3.5-.5.8-.2.3-.3.5-.5.7 0 .8 0 1.5-.1 2.2 0 .7-.1 1.5-.1 2.1h1.4v1.1c-.5 0-.9.1-1.3 0-.4 0-.8 0-1.2-.1-.4 0-.8-.1-1.2-.1H37.3c-.1 0-.2 0-.3-.1-.1 0-.1-.1-.1-.2s-.1-.3-.1-.4v-.4c0-.1.1-.2.1-.2.2.1.4.2.6.1s.4-.2.5-.4c0-.1.1-.3.1-.7 0-.4 0-.9.1-1.6 0-.6.1-1.3.1-2.1s0-1.6.1-2.4c0-.8 0-1.5.1-2.3 0-.7.1-1.3.1-1.8v-.7c0-.2-.1-.4-.2-.6-.1-.2-.3-.3-.5-.4-.2-.1-.4 0-.6.1 0-.2-.1-.5-.1-.7 0-.2 0-.4-.1-.7 1 0 2 .1 3 .1.9 0 1.9.1 3 .1v.3c0 .1 0 .3.1.4v.4c0 .1 0 .2-.1.2-.1.1-.2.1-.3.1-.1 0-.2 0-.4-.1-.1-.1-.3-.1-.4-.2-.1-.1-.3-.1-.3-.1-.1.9-.1 1.9-.1 2.9s-.1 2-.1 3.1c.7-1.2 1.4-2.5 2-3.8.2-.3.3-.6.4-.9.1-.3.3-.6.5-.9.2-.3.4-.5.7-.7.3.3.6.2.9.1.3-.1.7-.1 1 0 .3.1.6.2.9.5.2.3.4.6.4 1s.1.8 0 1.1v.5c0 .2-.1.3-.2.4-.1.2-.2.3-.4.4-.2.1-.4.1-.5.2-.1 0-.3.1-.4.1h-.4c-.2-.3-.4-.4-.4-.6-.1-.2-.1-.4 0-.5.1-.2.2-.3.3-.3.1 0 .2-.1.4-.1.2-.1.3-.2.3-.3.1-.2.1-.3.1-.5 0-.3-.1-.5-.1-.7-.1-.2-.2-.3-.3-.3-.2 0-.3 0-.5.1s-.3.2-.5.4-.3.4-.4.6c-.1.2-.3.5-.4.7-.1.3-.3.6-.4.8-.2.2-.3.5-.4.8-.4.9-.8 1.7-1.2 2.5.3 0 .6-.1 1 0h1c.3 0 .7.1 1 .2.3.1.6.3.8.6.3.3.4.6.5 1 .1.4.1.8.2 1.1l.2 2.1c0 .2.1.5.1.7 0 .4.1.7.3.9zM71.7 13.9c.2.2.4.4.7.5.3.1.5 0 .8-.1 0 .2.1.3.1.6.1.2.1.4.1.6h-1.1s-.8 0-1.3.1h-2.3v-.2c0-.1.1-.2.2-.3.1-.1.2-.2.4-.3.2-.1.3-.1.6-.1.1 0 .1-.2.1-.7v-1.6c0-.6 0-1.2-.1-1.9s0-1.1 0-1.5V6.4c0-.7.1-1.5.1-2.2-.6 1.3-1.1 2.7-1.6 4.1-.5 1.5-1 3-1.5 4.4 0 0 .1.1.1.2-.2 0-.4 0-.7.1-.3.1-.5.1-.7.1-.5-1.9-1.1-3.7-1.6-5.5-.5-1.8-1.1-3.6-1.6-5.5-.1 1-.1 2-.1 3 0 1.1-.1 2.1-.1 3.2s0 2.1-.1 3.2c0 1-.1 2-.1 3h1.4v1.1c-.5 0-.9.1-1.3 0-.4 0-.8 0-1.2-.1-.4 0-.8-.1-1.2-.1H58c-.1 0-.2 0-.3-.1-.1 0-.1-.1-.1-.2s-.1-.3-.1-.4v-.4c0-.1.1-.2.1-.2.2.1.4.2.6.1s.4-.2.5-.4c0-.1.1-.3.1-.7 0-.4 0-.9.1-1.6 0-.6.1-1.3.1-2.1V7.2c0-.8 0-1.5.1-2.3 0-.7.1-1.3.1-1.8v-.7c0-.2-.1-.4-.2-.6-.1-.2-.3-.3-.5-.4-.2-.1-.4 0-.6.1 0-.2-.1-.5-.1-.7 0-.2 0-.4-.1-.7 1 0 2 .1 3 .1.9 0 1.9.1 3 .1 0 .3-.1.5-.4.7.3 1.3.6 2.6 1 3.9l1.2 3.9c.2-.6.4-1.3.6-1.9l.6-1.8c.3-.5.5-1.1.8-1.7.2-.6.4-1.3.6-2-.1 0-.3 0-.4-.1-.1 0-.2 0-.4-.1-.1 0-.1-.1-.1-.3 0-.1.1-.2.1-.3.1-.1.2-.1.3-.1h4.5c.1 0 .3.1.4.2.1.1.2.2.2.4s0 .3-.2.3c-.1-.1-.2-.1-.3-.1-.1 0-.2.1-.3.1-.2.4-.3.8-.4 1.3-.1.5-.1.9-.1 1.4-.2 2.8-.2 5.6 0 8.4 0 .3 0 .5.1.7-.1.3 0 .5.2.7zM81.7 12h-.4c0 .4 0 .9-.2 1.3-.1.4-.4.8-.7 1.1-.3.3-.7.6-1.1.8-.4.2-.9.3-1.3.4-.4.1-.8 0-1.2 0-.4-.1-.8-.2-1.1-.5-.2-.1-.3-.3-.5-.5s-.3-.4-.4-.6c-.2-.4-.3-.7-.4-1-.1-.3-.2-.6-.3-1-.1-.3-.1-.6-.1-1 0-.3 0-.7.1-1.1.1-.7.3-1.4.5-2 .3-.6.6-1.1.9-1.6s.8-.8 1.3-1.1c.5-.3 1-.4 1.5-.4.2 0 .4 0 .6.1.2.1.3.1.5.3.2.2.4.4.6.8.2.4.4.8.5 1.3h.4v.4l-1.7.3c-.2.1-.3.1-.4 0-.1 0-.1-.1-.2-.2v-.2h.4c.1-.1.2-.2.2-.4v-.5c0-.3-.1-.6-.3-.9l-.3-.3c-.1-.1-.2-.1-.4 0-.1 0-.3.1-.4.3-.1.2-.3.4-.4.6l-.3.6c-.1.2-.1.4-.1.5-.4 1.8-.5 3.6-.1 5.5.1.2.1.4.2.7l.3.6c.1.2.3.3.6.5.2.1.4.1.7.1.4-.1.7-.3 1-.7.2-.4.4-.8.5-1.2 0-.2.1-.4.1-.6v-.3h-.4c-.1 0-.1-.1-.1-.2s0-.2.1-.2h2.4v.2c-.5-.1-.5 0-.6.1z"/><path d="M83.5 14.2c.2-4.3.3-8.5.2-12.8h-1.8V.9.4c.7 0 1.3 0 2-.1.7 0 1.3 0 2-.1.8-.2 1.6-.2 2.4-.1.8.1 1.6.3 2.4.5.7.3 1.4.7 1.9 1.2s.9 1.1 1.1 1.8c.3 1.3.4 2.5.3 3.8 0 1.2-.2 2.4-.3 3.6 0 .4-.1.8-.2 1.2-.1.4-.3.8-.5 1.1-.3.5-.8 1-1.3 1.3-.5.3-1.1.5-1.7.6-.5.1-.9.2-1.4.1-.5 0-.9 0-1.4-.1h-4.9c-.2-.4-.1-.8.2-1.1.2-.2.3-.2.5-.3.2.3.4.3.5.4zm5.9-12.3c-.4-.3-.8-.5-1.3-.6-.5-.1-1-.1-1.5-.1-.3 4.5-.2 9.1.4 13.6.2 0 .4 0 .5-.1.2 0 .4-.1.6-.1.3-.1.6-.2.9-.4.3-.2.6-.4.8-.7.2-.3.4-.6.5-1s.2-.7.2-1.1c.4-2.1.4-4.2.2-6.3-.1-.6-.2-1.2-.4-1.9 0-.4-.4-.9-.9-1.3zM102.4 9.7c-.6-.1-1.3-.1-2 0s-1.4.4-2 .8l-.2-1.4.9-.1c0-.4-.1-.7-.1-1 0-.2-.1-.5-.1-.9-.3 0-.6.1-.9.1-.3 0-.6.1-1 .1-.2.7-.3 1.3-.4 1.8-.1.5-.2 1.1-.4 1.6l.2-.1.7.6c-.4.2-.8.6-1.2 1.1-.4.5-.7 1-.9 1.5l-.9-.5c0-.1.1-.2.2-.4s.2-.3.2-.4c.1-.2.2-.5.3-1 .1-.4.2-.9.4-1.3.1-.5.2-.9.3-1.3.1-.4.2-.7.2-.9l.3-1.2.3-1.2c.2-.7.3-1.4.4-2.1.1-.7.2-1.4.3-2.2h-.6l.1-.8 4-.1.1.8h-.2-.2c.1.7.2 1.4.3 2l.3 1.8.3 1.8c.1.6.2 1.3.4 2h.6l.3.9zm-3.6-3.6c-.1-.7-.2-1.3-.3-2-.1-.6-.3-1.3-.4-2-.1.6-.2 1.3-.4 2.1-.1.7-.3 1.5-.5 2.2l1.6-.3z"/><path d="M124.9 20.1c0-.3.1-.6.3-.8.2-.2.4-.3.7-.4.3-.1.5 0 .8.1.3.1.5.3.6.5.3.4.6.9.7 1.4.2.5.2 1 .2 1.5s-.1 1-.3 1.5c-.2.5-.4 1-.7 1.4-.6.9-1.4 1.6-2.4 2-1 .5-2 .7-3 .7-1.5 0-2.8-.3-3.9-1s-2.1-1.4-3-2.4c-.9-1-1.8-2.1-2.5-3.2-.8-1.2-1.5-2.3-2.3-3.5-1.1 1.2-2.4 2.2-3.9 3-1.5.8-3 1.1-4.5 1-1.1 0-2.1-.1-3-.5-.9-.3-1.6-.8-2.2-1.4-.6-.6-.9-1.3-1.1-2.2-.2-.8-.1-1.7.2-2.7.3-.9.7-1.6 1.3-2.2.6-.6 1.2-1.1 2-1.5.7-.4 1.5-.6 2.4-.7.8-.1 1.7 0 2.6.2v-5-4.6h-1.8V.8.3l3.7-.1c.8-.2 1.6-.2 2.4-.1.8.1 1.6.3 2.4.5.7.3 1.4.7 1.9 1.2s.9 1.1 1.1 1.8c.3 1.2.4 2.4.3 3.6-.1 1.2-.2 2.5-.4 3.7-.1 1-.4 2-.8 3-.5 1-1 2-1.7 2.9.3.4.6.8.8 1.2.3.4.5.8.8 1.2.5.8 1.1 1.6 1.7 2.5.6.8 1.3 1.6 2 2.4.7.7 1.5 1.3 2.4 1.8s1.8.7 2.9.8c1.1 0 2.1-.2 3-.7.9-.5 1.6-1.2 2.1-2.2.2-.4.3-.8.4-1.3.1-.5 0-.9-.1-1.3-.2.1-.4.2-.6.2-.2 0-.4 0-.6-.1-.2-.1-.4-.2-.5-.4s-.4-.5-.4-.8zm-22 .9c1.5-.4 2.8-1 3.7-1.8.9-.8 1.7-1.7 2.3-2.8-.2-.2-.3-.5-.6-.7-.6-.7-1.2-1.4-1.9-1.9 0 .6.1 1.2.1 1.8 0 .6.1 1.1.2 1.6v.1h-4.3c-.1-.2-.1-.4 0-.7 0-.2.1-.3.3-.5.3-.3.7-.4 1.1-.2l.1-3.5c-.5-.2-1-.3-1.5-.3s-1.1 0-1.6.1c-.6.1-1.1.3-1.6.6s-.9.7-1.3 1.1c-.4.4-.7.9-.9 1.5-.2.5-.3 1.1-.3 1.6 0 .7.2 1.3.6 1.8.4.5.9.9 1.4 1.4.2.2.5.3.8.5.3.1.7.2 1.1.3.4.1.8.1 1.2.1.3 0 .7 0 1.1-.1zm6.4-19.1c-.4-.3-.8-.5-1.2-.6-.5-.1-.9-.1-1.4-.1-.1 1.7-.2 3.4-.3 5.3-.1 1.9-.1 3.7 0 5.6.6.4 1.2.8 1.7 1.4.5.5 1 1.1 1.5 1.6.2-.6.4-1.2.6-1.9.2-.6.3-1.2.3-1.7.2-1.1.2-2.1.3-3.1 0-1 0-2.1-.1-3.1-.1-.6-.2-1.2-.4-1.9-.2-.6-.5-1.1-1-1.5z"/><path d="M116.5 1.2h-1.8V.4c.5 0 .9 0 1.2-.1s.7 0 1.1 0h1.1s.8 0 1.3-.1c.9 0 1.8 0 2.8-.1.9 0 1.8 0 2.8-.1v3.6h-1.3c-.1 0-.1-.1 0-.1.1-.2.1-.4.1-.6s0-.4-.1-.6l-.3-.6c-.1-.2-.2-.3-.4-.4-.2-.1-.4-.2-.6-.2h-.7c-.3 0-.5.1-.8.1-.3.1-.5.2-.6.4-.1.2-.1.3-.1.3v.3c0 .7-.1 1.3-.1 2 0 .6-.1 1.3-.1 1.9v1c.6-.2 1.2-.3 1.9-.4.6-.1 1.2-.3 1.9-.4 0 .1.1.2.1.3V7c0 .2-.1.3-.1.4-.1.1-.1.2-.1.3-.1.1-.2.1-.4.2-.1 0-.3.1-.4.1-.5.1-.9.2-1.4.3-.5.1-.9.1-1.4.2 0 1-.1 2-.2 2.9-.1 1-.1 1.9-.2 2.9.8.2 1.5.3 2 .1.6-.2 1.2-.5 1.9-1 .2-.1.2-.3.2-.5v-.7c0-.2.1-.5.2-.6.1-.2.3-.3.7-.4.4 0 .6.1.7.4.1.3.2.7.2 1.1 0 .5 0 .9-.1 1.4-.1.5-.1.9 0 1.2h-1.4c-.4 0-.8 0-1.2.1-.4 0-.8 0-1.2.1h-1.3c-.9 0-1.7 0-2.5.1-.7.1-1.6.1-2.4.1-.2-.2-.2-.4-.2-.7 0-.2.1-.5.3-.6.2-.2.3-.3.6-.3.2-.1.5 0 .7.1.1-2.1.2-4.3.1-6.5-.7-2.2-.7-4.3-.5-6.5z"/></g></svg>
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        var algolia_app_id      = '8BB87I11DE';
+        var algolia_search_key  = '8e1d446d61fce359f69cd7c8b86a50de';
+        var version             = '5.6';
+    </script>
+
+    <script id="search_suggestion_template" type="text/template">
+	<div class="autocomplete-wrapper">
+		{{#_highlightResult.h1}}
+		<div class="h1">
+			{{{ _highlightResult.h1.value }}}
+		</div>
+		{{/_highlightResult.h1}}
+
+		<div class="sub-section">
+			{{#_highlightResult.h2}}
+			<div class="h2">
+				<span class="hash">#</span> {{{ _highlightResult.h2.value }}}
+			</div>
+			{{/_highlightResult.h2}}
+
+			{{#_highlightResult.h3}}
+			<div class="h3">
+				> {{{ _highlightResult.h3.value }}}
+			</div>
+			{{/_highlightResult.h3}}
+
+			{{#_highlightResult.h4}}
+			<div class="h4">
+				> {{{ _highlightResult.h4.value }}}
+			</div>
+			{{/_highlightResult.h4}}
+		</div>
+
+		{{#_highlightResult.content}}
+		<div class="content">
+			{{{ _highlightResult.content.value }}}
+		</div>
+		{{/_highlightResult.content}}
+	</div>
+</script>
+
+<script id="search_empty_template" type="text/template">
+	<div class="autocomplete-wrapper empty">
+		<div class="h2">We didn't find any result for "{{query}}". Sorry!</div>
+	</div>
+</script>
+
+<script id="search_footer_template" type="text/template">
+	<div class="footer">
+		<a target="_blank" href="https://www.algolia.com/?utm_source=laravel&amp;utm_medium=link&amp;utm_campaign=laravel_documentation_search">
+			<img width="105" src="https://laravel.com/assets/img/algolia-logo.svg">
+			<div style="clear: both"></div>
+		</a>
+	</div>
+</script>
+
+    <script src="../../assets/js/laravel91b2.js?id=8f117ab66f097a179fb0"></script>
+    <script src="../../assets/js/viewport-units-buggyfill.js"></script>
+    <script>window.viewportUnitsBuggyfill.init();</script>
+    <script>
+        var _gaq=[['_setAccount','UA-23865777-1'],['_trackPageview']];
+        (function(d,t){
+            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)
+        }(document,'script'));
+    </script>
+</body>
+
+<!-- Mirrored from laravel.com/docs/5.6/releases by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 May 2019 04:23:30 GMT -->
+</html>
